@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span.orange{
+            color: brown;
+        }
+        input:focus {
+            background-color: greenyellow;
+        }
+        a{
+            text-decoration: none;
+        }
+        a:hover {
+            color: red;
+        }
+        .box::before{
+            content: "앞";
+        }
+        [type = "password"] {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" value="HEROPY">
+        <input type="password" value="1234">
+        <input type="text" value="ABCD" disabled>
+        <input type="text">
+        <ul>
+            <li>사과</li>
+            <li class="orange">오렌지</li>
+            <li>바나나</li>
+        <ul>
+        <div>당근</div>
+        <p>토마토</p>
+        <span class="orange">오렌지</span>
+    </div>
+    <div>
+        <a href="https://naver.com">Naver</a>
+    </div>
+    <div class="box">conten</div>
+</body>
+</html>

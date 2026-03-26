@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        fieldset {
+            width: 520px;
+            margin: 30px ;
+            padding: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            resize: none;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <fieldset>
+            <legend>회원가입 동의서</legend>
+
+            <p>이용약관 동의(필수)</p>
+            <textarea rows="5" cols="20">
+여러분을 환영합니다 저의 웹사이트를 이용해 주셔서 감사합니다.
+
+본 이용약관은 여러분과 저(웹사이트 운영자) 간의 권리와 의무를 규정합니다.
+
+본 웹사이트를 이용함으로써 여러분은 본 이용약관에 동의하는 것으로 간주됩니다.
+            </textarea><br>
+
+            <input type="radio" name="terms"> 동의합니다.
+            <input type="radio" name="terms"> 동의하지 않습니다.
+            <br><br>
+
+            <p>개인정보 수집 및 이용 동의서(필수)</p>
+            <textarea rows="5" cols="10">
+개인정보 수집 및 이용에 대한 동의
+            </textarea><br>
+
+            <input type="radio" name="privacy"> 동의합니다.
+            <input type="radio" name="privacy"> 동의하지 않습니다.
+            <br><br>
+
+            <input type="checkbox"> 모두 동의합니다
+            <br><br>
+
+            <input type="submit" value="취소">
+            <input type="submit" value="확인">
+        </fieldset>
+    </form>
+</body>
+
+

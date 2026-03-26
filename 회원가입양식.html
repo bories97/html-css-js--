@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        p{
+             margin: 20px 0px 5px 0px; 
+        }
+
+        fieldset {
+            width: 800px;
+            margin: 20px;
+            padding: 20x;
+        }
+
+        textarea {
+            resize: none;
+        }
+</style>
+    </style>
+</head>
+
+<body>
+    <form>
+        <fieldset>
+            <legend>회원가입 양식</legend>
+            <p>* 아이디</p>
+            <textarea rows="1" cols="40" placeholder="아이디를 입력하세요"></textarea>
+            <input type="submit" value="아이디 중복 확인">
+            <br><br>
+
+            <p>* 비밀번호</p>
+            <textarea rows="1" cols="40" placeholder="영문, 숫자, 특수문자 포함 10자이상"></textarea>
+            <br><br>
+
+            <p>* 비밀번호 확인</p>
+            <textarea rows="1" cols="40" placeholder="영문, 숫자, 특수문자 포함 10자이상"></textarea>
+            <br><br>
+
+            <p>* 이름</p>
+            <textarea rows="1" cols="40" placeholder="이름을 입력하세요"></textarea>
+            </textarea>
+            <br><br>
+
+            <p>* 주민번호</p>
+            <input type="text" maxlength="6" size="8"> -
+            <input type="text" maxlength="7" size="8">
+            <br><br>
+
+            <P>* 성별</P>
+            <input type="radio" name="gender" value="no"> 선택안함
+            <input type="radio" name="gender" value="male"> 남성
+            <input type="radio" name="gender" value="female"> 여성
+            <br><br>
+
+            <p>* 생년월일</p>
+            <textarea rows="1" cols="40" placeholder="예: 19900101"></textarea>
+            <br><br>
+
+            <p>* 주소</p>
+            <textarea rows="1" cols="40"></textarea>
+            <br><br>
+
+            <p>* 우편번호</p>
+            <input type="text" maxlength="5" size="5">
+            <input type="submit" value="우편번호 찾기">
+            <input type="checkbox">이메일 수신 동의(선택)
+            <br><br>
+
+            <p>* 이메일</p>
+            <textarea rows="1" cols="40" placeholder="이메일 주소를 입력하세요"></textarea>
+
+            <p>* 휴대폰 번호</p>
+            <select>
+                <option>010
+                <option>011
+                <option>012 
+                </option>
+            </select> -
+            <input type="text" maxlength="2" size="2"> -
+            <input type="text" maxlength="2" size="2">
+            <input type="checkbox">SMS 수신 동의(선택) <br><br>
+
+            <input type="submit" value="초기화">
+            <input type="submit" value="가입하기">
+    </form>
+    
+</body>
+</html>
