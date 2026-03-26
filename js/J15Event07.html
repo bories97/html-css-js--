@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>J15Event07.html</title>
+        <script>
+            var timer, count = 1, divobj;
+            function settimer(obj) {
+                divobj = obj;
+                timer = setInterval("moveobj()", 300);
+            }
+            function moveobj() {
+                if (count%3==0) {
+                    clearInterval(timer);
+            }
+            count++;
+
+            var left = parseInt(divobj.style.left);
+            divobj.style.left = (left + 50) + "px";
+        }
+        </script>
+    </head>
+    <body>
+        <h2>마우스 이벤트 입니다.</h2>
+        <h3>mouseover / mouseout 이벤트</h3>
+        <table style="border-spacing: 1px; width: 400px; background-color: gray;">
+            <tr style="background-color: yellow;">
+                <td>번호</td>
+                <td>제목</td>
+                <td>작성자</td>
+            </tr>
+            <tr style="background-color: gray;" 
+                onmouseover="this.style.backgroundColor= 'green';"
+                onmouseout="this.style.backgroundColor= 'white';"> 
+                <td>1</td>
+                <td>어벤저스</td>
+                <td>페이즈1</td>
+            </tr style="background-color: white;" 
+                onmouseover="this.style.backgroundColor= 'green';"
+                onmouseout="this.style.backgroundColor= 'gray';">
+            <tr>
+                <td>2</td>
+                <td>어벤저스2-울트론시대</td>
+                <td>페이즈2</td>
+            </tr style="background-color: gray;" 
+                onmouseover="this.style.backgroundColor= 'green';"
+                onmouseout="this.style.backgroundColor= 'white';">
+            <tr >
+                <td>3</td>
+                <td>어벤저스3-스파이더맨시대</td>
+                <td>페이즈3</td>
+            </tr>
+            <tr style="background-color: white;" 
+                onmouseover="this.style.backgroundColor= 'green';"
+                onmouseout="this.style.backgroundColor= 'gray';">
+                <td>4</td>
+                <td>어벤저스4-엔드게임</td>
+                <td>페이즈4</td>
+            </tr>
+        </table>
+        <script>
+            function fnscale(flag) {
+                var ttitle = Document.getElementById("title");
+
+                var div = document.getElementsByTagName("div")[0];
+            
+                if (flag==1) {
+                    ttitle.innerHTML = "<big>mousedown 이벤트 발생</big>";
+                    div.style.backgroundColor = "green";
+
+                    console.log("현재크기", div.style.width, div.style.height);
+                    div.style.width = parseInt(div.style.width)*2 + "px";
+                    div.style.height = parseInt(div.style.height)*2 + "px";
+                    
+                } else if (flag==2) {
+                    ttitle.innerHTML = "<big>mouseup 이벤트 발생</big>";
+                    div.style.backgroundColor = "red";
+                    div.style.width = "100px";
+                    div.style.height = "100px";
+                }
+            }
+
+        </script>
+
+        <h3>mousedown / mouseup 이벤트</h3>
+        <h4>스케일 및 생상 변경</h4>
+        <div onmousedown="fnscale(1)" onmouseup="fnscale(2);" style="background-color: greenyellow; width: 100px; height: 100px;">여기를 클릭 하시오
+        </div>
+
+        <h3>mousedown 이벤트</h3>
+        <h4>div 상자의 위치 이동</h4>
+        <div onmousedown="settimer(this)" style="left: 0; top: 0;
+        position: relative; width: 100px; height: 100px;
+        background-color: blue;"></div>
+
+        <script>
+            function mouseoverfunc(obj) {
+                obj.src = "./miges/2.jpg";
+            }
+
+            function mouseoutfunc(obj) {
+                document.getElementById("trumpImg").src = "./miges/1.jpg";
+            }
+
+            var mousedownfunc = function (obj) {
+                obj.style.width = parseInt(obj.style.width)*2 + "px";
+                obj.style.height = parseInt(obj.style.height)*2 + "px";
+            }
+            var mouseupfunc = function () {
+                var imagtag = document.getElementsByClassName("img")[0];
+                imagtag.style.width = parseInt(imagtag.style.width)/2 + "px";
+                imagtag.style.height = parseInt(imagtag.style.height)/2 + "px";
+            }
+        </script>
+        <h3>이미지의 마우스 이벤트 적용하기</h3>
+        <img src="./imges/1.gpj" alt="하트" id="trumpImg"
+            style="width: 225px; height: 313px;"
+            onmouseover="mouseoverfunc(this)"
+            onmouseout="mouseoutfunc()"
+            onmousedown="mousedownfunc(this)"
+            onmouseup="mouseupfunc()"/>
+    </body>
+</html>

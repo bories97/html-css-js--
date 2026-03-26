@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J07Array.html</title>
+    <script>
+        var array = new Array(5);
+        document.write("배열의 크기:"+array.length);
+        document.write("<h2> 배열 초기화전 출력 </h2>");
+
+        for(var i=0; i<array.length; i++){
+            document.write("array["+i+"]="+array[i]+"<br/>");
+        }
+
+        array[0] = 100;
+        array[1] = 'javascript';
+        array[2] = new Date();
+        array[3] = 3.14;
+        array[4] = false;
+        document.write("<h2> 배열 초기화후 출력 </h2>");
+        for(var i=0; i<array.length; i++){
+            document.write(i+"번 방의 자료형"+typeof(array[i])+ ", array["+i+"]="+array[i]+"<br/>");
+        }
+
+        var init = new Array("홍길동", 20, "활빈당 아카데미", "010-1234-5678", "서울시 강남구");
+        document.write("<h2> 배열 선언과 동시에 초기화 </h2>");
+        for(var i=0; i<init.length; i++){
+            document.write(i+"번 방의 자료형"+typeof(init[i])+ ", init["+i+"]="+init[i]+"<br/>");
+        }
+
+        var initNoNew = ["활빈당 아카데미", 1, "javascript", "메드디앙"];
+        document.write("<h2> []를 이용 배열선언 후 출력 </h2>");
+        for(var i=0; i<initNoNew.length; i++){
+            document.write(i+"번 방의 자료형"+typeof(initNoNew[i])+ ", initNoNew["+i+"]="+initNoNew[i]+"<br/>");
+        }
+
+        document.write("<h2> 배열의 크기 미 지정 </h2>");
+        var nosize  = new Array();
+        document.write("배열의 크기:"+nosize.length+"<br/>");
+        nosize[0] = 100;
+        nosize[3] = 'javascript';
+        document.write("배열의 크기:"+nosize.length+"<br/>");
+        for(var i=0; i<nosize.length; i++){
+            document.write(i+"번 방의 자료형"+typeof(nosize[i])+ ", nosize["+i+"]="+nosize[i]+"<br/>");
+        }
+        </script>
+</head>
+<body>
+    <script type="text/javascript">
+        var studentarray = new Array();
+
+        var getavg = function(){
+            var countofstudent = 
+            document.getElementById("numofstudent").value;
+        var total = 0;
+        for (let i = 0; i < countofstudent; i++) {
+            studentarray[i] =
+                parseInt(prompt((i+1)+"번 학생점수", "50"));
+            total += studentarray[i];
+        }
+        var avg = total / countofstudent;
+        var stringresult = "";
+        for (var i = 0; i < countofstudent; i++) {
+            stringresult += (i+1)+"번 학생 점수 : "+studentarray[i]+ "\r\n";
+        }
+        stringresult += "총점" + total + "평균" + avg;
+        alert(stringresult);
+
+        }
+    </script>
+    <h2>배열을 이용한 평균 구하기</h2>
+    <table>
+        <tr>
+            <td>학생수 입력:</td>
+            <td><input type="text" id="numofstudent" size="5" /></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button onclick="getavg()">평균 구하기</button>
+            </td>
+            <td></td>
+        </tr>
+    </table>
+    
+</body>
+</html>

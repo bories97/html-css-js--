@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J18FormObject02.html</title>
+    <script>
+        var chkarr = document.getElementsByClassName("spo");
+        function allchecked() {
+            console.log("체크박스 갯수", chkarr.length);
+            for (var i =0; i < array.length; i++) {
+                chkarr[i].checked = 'checked';
+                
+            }
+        }
+
+        function allunchecked() {
+            for (var i =0; i < array.length; i++) {
+                chkarr[i].checked = null;
+                
+            }
+        }
+
+        function allreverse() {
+             for (var i =0; i < array.length; i++) {
+                if (chkarr[i].checked = true) {
+                    chkarr[i].checked = false;
+                } else {
+                    chkarr[i].checked = true;
+                }
+                chkarr[i].checked = null;
+                
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>체크박스 전체선택/해제/반전하기</h2>
+    <fieldset>
+        <legend>좋아하는 운동을 선택하세요</legend>
+        <input type="checkbox" name="spo" value="야구"/>야구
+        <input type="checkbox" name="spo" value="야구"/>농구
+        <input type="checkbox" name="spo" value="야구"/>축구
+        <input type="checkbox" name="spo" value="야구"/>배구
+        <input type="checkbox" name="spo" value="야구"/>베드민턴
+        <input type="checkbox" name="spo" value="야구"/>헨드볼
+        <input type="checkbox" name="spo" value="야구"/>테니스
+    </fieldset>
+    <p>
+        <button type="button" onclick="allchecked()">
+            전체 선택하기
+        </button>
+        <button type="button" onclick="allunchecked()">
+            전체 해제하기
+        </button>
+        <button type="button" onclick="allreverse()">
+            전체 반전하기
+        </button>
+    </p>
+    
+</body>
+</html>

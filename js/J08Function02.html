@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>J08Function02.html</title>
+        <script>
+            document.write("<h2>지역변수와 전역변수</h2>");
+            var globalvar = 100;
+            function conflict(globalvar) {
+                this.globalvar = globalvar * 2;
+                document.write("함수 안 globalvar(지역변수) = "+globalvar+"<br/>");
+                document.write("함수 안 globalvar(전역변수) = "+this.globalvar+"<br/>");
+            }
+            conflict(globalvar);
+
+            document.write("함수 밖 globalvar(전역변수) = "+globalvar+"<br/>");
+
+            function conflict2(localvar) {
+                globalvar = localvar + 50;
+                localvar = localvar + 80;
+                document.write("함수 안 globalvar(전역변수) = "+globalvar+ ", localvar(지역변수) = "+localvar+"<br/>");
+            }
+            conflict2(globalvar);
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

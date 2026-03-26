@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>J08Function01.html</title>
+        <script>
+            function nopramnoretrun(){
+                document.write("======메뉴======<br/>");
+                document.write("1.계속 2.나가기<br/>");
+                document.write("======메뉴======<br/><br/>");
+            }
+            nopramnoretrun();
+
+
+            var yesparmnoretrun = function(start, end){
+                var sum = 0;
+                for (var i = start; i <= end; i++) {
+                    sum += i;
+                }
+                document.write(start +"부터" + end + "까지의 합은"+sum+"입니다.<br/>");
+            }
+            yesparmnoretrun(1, 10);
+            yesparmnoretrun(1, 100);
+            yesparmnoretrun(1, 1000);
+
+
+            var noprarmyesretrun = function () {
+                var name = prompt("이름을 입력하세요", "");
+                var age = prompt("나이를 입력하세요", "20");
+                
+                return name + "은(는) " + age + "세입니다.<br/>";
+                document.write("retrun문 이후 출력문<br/>");
+            }
+            document.write(noprarmyesretrun());
+
+
+            var yesparamyesreturn = function (num1, num2){
+                return num1 > num2 ? num1 : num2;
+            }
+            document.write("큰 수는" + yesparamyesreturn(50, 20)+"입니다.<br/>");
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

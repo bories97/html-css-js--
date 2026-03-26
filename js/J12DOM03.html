@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>J12DOM03.html</title>
+        
+    </head>
+    <body>
+        <style>
+            div{border: 1px solid green;}
+            #mydiv{font-size: 24px;}
+            .mycls{padding: 5px;}
+        </style>
+        <script>
+            function mydivid(){
+                var div = document.getElementById("mydiv");
+                div.style.color = "red";
+            }
+
+            function mydivclass(){
+                var divs = document.getElementsByClassName("mycls");
+                for (var i = 0; i < divs.length; i++) {
+                    divs[i].style.color = "blue";
+                }
+            }
+        </script>
+        <div id="mydiv" class="mycls">mydiv1.</div>
+        <div id="mydiv" class="mycls">mydiv2.</div>
+        <div id="mydiv" class="mycls">mydiv3.</div>
+        <div id="mydiv" class="mycls">mydiv4.</div>
+
+        <button type="button" onclick="mydivid()">id버튼</button>
+        <button type="button" onclick="mydivclass()">class버튼</button>
+
+    </body>
+</html>

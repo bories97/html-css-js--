@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>J15Event06.html</title>
+        <script>
+            function focusnblur(num) {
+                if (num==1) {
+                    document.getElementById("span").innerText = "focus 이벤트 발생";
+                } else if (num==2) {
+                    document.getElementById("span").innerText = "blur 이벤트 발생";
+                    
+                }
+            }
+
+            function idfocus(flag, object) {
+                if (flag==1) {
+                    if (object.value=="아이디를 입력 해주세요") {
+                        object.value = "";
+                    }
+                } else { if(flag==2)
+                    if (object.value=="") {
+                        object.value = "아이디를 입력 해주세요";
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h2>focus & blur 이벤트</h2>
+        <input type="text" onfocus="focusnblur(1)" onblur="focusnblur(2)"/>
+        <span id="span"></span>
+
+        <h3>JS를 이용한 focus/blur 이벤트 예제</h3>
+        아이디1 : <input type="text" value="아이디를 입력 해 주세요" onfocus="idfocus(1, this);" onblur="idfocus(2,this);" style="color: gray;"/>
+        <br/>
+        <h3>html의 placeholder 사용</h3>
+        아이디2: <input type="text" placeholder="아이디를 입력 해 주세요"/>
+    </body>
+</html>
